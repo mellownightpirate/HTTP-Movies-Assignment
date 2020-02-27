@@ -14,7 +14,6 @@ const UpdateMovie = (props) => {
  const [movieInfo, setMovieInfo] = useState({initialItem})
 
  useEffect(() => {
-     console.log("props test", props.items)
     const editingItem = props.items.find(film => {
       return film.id === Number(props.match.params.id);
     });
@@ -27,7 +26,6 @@ const UpdateMovie = (props) => {
   const changeHandler = ev => {
     ev.persist();
     let value = ev.target.value;
-   console.log(movieInfo)
     setMovieInfo({
       ...movieInfo,
       [ev.target.name]: value

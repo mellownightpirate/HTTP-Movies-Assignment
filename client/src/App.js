@@ -15,7 +15,6 @@ const App = props => {
     axios
       .get("http://localhost:5000/api/movies")
       .then(res => {
-        console.log("res.data", res.data);
         setItems(res.data);
       })
       .catch(error => console.log(error));
@@ -46,7 +45,6 @@ const App = props => {
     axios
       .delete(`http://localhost:5000/api/movies/${id}`)
       .then(response => {
-        console.log("delete", response.data);
         setItems(response.data);
         props.history.push("/");
       })

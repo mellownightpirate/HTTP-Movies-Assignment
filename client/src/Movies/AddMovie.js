@@ -3,7 +3,6 @@ import axios from "axios";
 
 const AddMovie = props => {
   const [appState, setAppState] = useState(props.items);
-  console.log("appState", appState);
 
   const [newMovie, setNewMovie] = useState({
     id: "",
@@ -18,7 +17,6 @@ const AddMovie = props => {
       ...newMovie,
       [e.target.name]: e.target.value
     });
-    console.log(newMovie);
   };
 
   const handleSubmit = e => {
@@ -32,7 +30,6 @@ const AddMovie = props => {
       stars: [newMovie.stars]
     };
 
-    console.log("updated movie", movieUpdate);
     handleNewMovie(movieUpdate);
   };
 
